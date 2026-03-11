@@ -1,0 +1,13 @@
+index,feature_name
+0,Loudness_sma3
+1,alphaRatio_sma3
+2,hammarbergIndex_sma3
+3,slope0-500_sma3
+4,slope500-1500_sma3
+5,mfcc1_sma3
+6,mfcc2_sma3
+7,mfcc3_sma3
+8,mfcc4_sma3
+9,logRelF0-H1-A3_sma3nz
+10,F2frequency_sma3nz
+11,F2bandwidth_sma3nz

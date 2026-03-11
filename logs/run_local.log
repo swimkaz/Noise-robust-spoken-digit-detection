@@ -1,0 +1,206 @@
+2026-03-10 00:26:46 | INFO | __main__ | Starting run_local.py
+2026-03-10 00:26:46 | INFO | __main__ | Args | dataset_zip=/mnt/e/largescaleml/dsp_final_project/M214_project_data.zip extract_dir=/mnt/e/largescaleml/dsp_final_project/M214_project_data seed=0 batch_size=32 num_epochs=40 lr=0.0003 device=cuda feature_level=lld use_xgb_feature_selection=True xgb_val_ratio=0.200 combine_mfcc=False skip_train=True checkpoint_path=/mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt save_cm_dir=./figures
+2026-03-10 00:26:46 | INFO | __main__ | Random seed set to 0
+2026-03-10 00:26:46 | INFO | __main__ | Dataset already extracted at /mnt/e/largescaleml/dsp_final_project/M214_project_data
+2026-03-10 00:27:18 | INFO | __main__ | Train: 2500 files loaded (eGeMAPS)
+2026-03-10 00:27:21 | INFO | __main__ | Test clean: 300 files loaded (eGeMAPS)
+2026-03-10 00:27:25 | INFO | __main__ | Test noisy 5dB: 300 files loaded (eGeMAPS)
+2026-03-10 00:27:28 | INFO | __main__ | Test noisy 10dB: 300 files loaded (eGeMAPS)
+2026-03-10 00:27:28 | INFO | __main__ | Loaded datasets | train=2500 test_clean=300 test_5db=300 test_10db=300
+2026-03-10 00:27:28 | INFO | __main__ | [XGB FS] Starting feature selection with n_samples=2500, feat_dim=25, val_ratio=0.200
+2026-03-10 00:27:29 | INFO | __main__ | [XGB FS] Split sizes: train=2000, val=500 | summary dims: train=(2000, 100), val=(500, 100)
+2026-03-10 00:27:32 | INFO | __main__ | [XGB FS] k=  8  clean=0.9320  5dB=0.6520  10dB=0.8340  avg=0.8060
+2026-03-10 00:27:33 | INFO | __main__ | [XGB FS] k= 12  clean=0.9580  5dB=0.6820  10dB=0.8520  avg=0.8307
+2026-03-10 00:27:35 | INFO | __main__ | [XGB FS] k= 16  clean=0.9560  5dB=0.6760  10dB=0.8400  avg=0.8240
+2026-03-10 00:27:36 | INFO | __main__ | [XGB FS] k= 20  clean=0.9580  5dB=0.6140  10dB=0.7920  avg=0.7880
+2026-03-10 00:27:38 | INFO | __main__ | [XGB FS] k= 24  clean=0.9580  5dB=0.6360  10dB=0.8160  avg=0.8033
+2026-03-10 00:27:39 | INFO | __main__ | [XGB FS] k= 25  clean=0.9580  5dB=0.6100  10dB=0.8100  avg=0.7927
+2026-03-10 00:27:39 | INFO | __main__ | [XGB FS] Selected 12/25 channels (val clean=0.9580, 5dB=0.6820, 10dB=0.8520, avg=0.8307)
+2026-03-10 00:27:39 | INFO | __main__ | [XGB FS] Applied selected channels. New feature dim: 12
+2026-03-10 00:27:39 | INFO | __main__ | Feature dim: 12 | Train: 2500 | Test clean: 300 | Test noisy 5dB: 300 | Test noisy 10dB: 300
+2026-03-10 00:27:39 | INFO | __main__ | Train frames: min=10, max=224, mean=39.2
+2026-03-10 00:27:39 | INFO | __main__ | Test clean frames: min=10, max=110, mean=38.6
+2026-03-10 00:27:39 | INFO | __main__ | Noisy 5dB frames: min=10, max=110, mean=38.6
+2026-03-10 00:27:39 | INFO | __main__ | Noisy 10dB frames: min=10, max=110, mean=38.6
+2026-03-10 00:27:39 | INFO | __main__ | Class distribution | train=[252, 250, 254, 250, 248, 249, 257, 250, 249, 241] test_clean=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30]
+2026-03-10 00:27:39 | INFO | __main__ | DataLoaders ready | train_batches=79 test_clean_batches=19
+2026-03-10 00:27:39 | INFO | __main__ | Noisy 5dB loader batches=19
+2026-03-10 00:27:39 | INFO | __main__ | Noisy 10dB loader batches=19
+2026-03-10 00:27:39 | INFO | __main__ | Using device: cuda
+2026-03-10 00:27:40 | INFO | __main__ | Model initialized | input_size=12 trainable_params=549226
+2026-03-10 00:27:40 | INFO | __main__ | Skip-train enabled. Loaded checkpoint from /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch=19)
+2026-03-10 00:27:40 | INFO | __main__ | Saving confusion matrices to ./figures with prefix 'best_ep_19'
+2026-03-10 00:27:40 | INFO | __main__ | Saved training curves to ./figures/best_ep_19_training_curves.png
+2026-03-10 00:27:42 | INFO | __main__ | Best clean accuracy: 0.7900 (epoch 19)
+2026-03-10 00:27:42 | INFO | __main__ | Best 5dB accuracy: 0.4700 (epoch 19)
+2026-03-10 00:27:42 | INFO | __main__ | Best 10dB accuracy: 0.5933 (epoch 19)
+2026-03-10 00:27:42 | INFO | __main__ | Final loaded-checkpoint accuracy | clean=0.7900 5dB=0.4700 10dB=0.5933
+2026-03-10 00:27:42 | INFO | __main__ | Final metrics (clean) | acc=0.7900 precision_macro=0.8255 recall_macro=0.7900 f1_macro=0.7952 precision_weighted=0.8255 recall_weighted=0.7900 f1_weighted=0.7952
+2026-03-10 00:27:42 | INFO | __main__ | Final metrics (5dB) | acc=0.4700 precision_macro=0.5204 recall_macro=0.4700 f1_macro=0.4237 precision_weighted=0.5204 recall_weighted=0.4700 f1_weighted=0.4237
+2026-03-10 00:27:42 | INFO | __main__ | Final metrics (10dB) | acc=0.5933 precision_macro=0.6074 recall_macro=0.5933 f1_macro=0.5710 precision_weighted=0.6074 recall_weighted=0.5933 f1_weighted=0.5710
+2026-03-10 00:27:42 | INFO | __main__ | Run completed in 0.92 minutes
+2026-03-10 00:29:17 | INFO | __main__ | Starting run_local.py
+2026-03-10 00:29:17 | INFO | __main__ | Args | dataset_zip=/mnt/e/largescaleml/dsp_final_project/M214_project_data.zip extract_dir=/mnt/e/largescaleml/dsp_final_project/M214_project_data seed=0 batch_size=32 num_epochs=40 lr=0.0003 device=cuda feature_level=lld use_xgb_feature_selection=True xgb_val_ratio=0.200 combine_mfcc=False skip_train=True checkpoint_path=/mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt save_cm_dir=./figures
+2026-03-10 00:29:17 | INFO | __main__ | Random seed set to 0
+2026-03-10 00:29:17 | INFO | __main__ | Dataset already extracted at /mnt/e/largescaleml/dsp_final_project/M214_project_data
+2026-03-10 00:29:48 | INFO | __main__ | Train: 2500 files loaded (eGeMAPS)
+2026-03-10 00:29:52 | INFO | __main__ | Test clean: 300 files loaded (eGeMAPS)
+2026-03-10 00:29:56 | INFO | __main__ | Test noisy 5dB: 300 files loaded (eGeMAPS)
+2026-03-10 00:29:59 | INFO | __main__ | Test noisy 10dB: 300 files loaded (eGeMAPS)
+2026-03-10 00:29:59 | INFO | __main__ | Loaded datasets | train=2500 test_clean=300 test_5db=300 test_10db=300
+2026-03-10 00:29:59 | INFO | __main__ | [XGB FS] Starting feature selection with n_samples=2500, feat_dim=25, val_ratio=0.200
+2026-03-10 00:29:59 | INFO | __main__ | [XGB FS] Split sizes: train=2000, val=500 | summary dims: train=(2000, 100), val=(500, 100)
+2026-03-10 00:30:03 | INFO | __main__ | [XGB FS] k=  8  clean=0.9320  5dB=0.6520  10dB=0.8340  avg=0.8060
+2026-03-10 00:30:04 | INFO | __main__ | [XGB FS] k= 12  clean=0.9580  5dB=0.6820  10dB=0.8520  avg=0.8307
+2026-03-10 00:30:05 | INFO | __main__ | [XGB FS] k= 16  clean=0.9560  5dB=0.6760  10dB=0.8400  avg=0.8240
+2026-03-10 00:30:06 | INFO | __main__ | [XGB FS] k= 20  clean=0.9580  5dB=0.6140  10dB=0.7920  avg=0.7880
+2026-03-10 00:30:08 | INFO | __main__ | [XGB FS] k= 24  clean=0.9580  5dB=0.6360  10dB=0.8160  avg=0.8033
+2026-03-10 00:30:09 | INFO | __main__ | [XGB FS] k= 25  clean=0.9580  5dB=0.6100  10dB=0.8100  avg=0.7927
+2026-03-10 00:30:09 | INFO | __main__ | [XGB FS] Selected 12/25 channels (val clean=0.9580, 5dB=0.6820, 10dB=0.8520, avg=0.8307)
+2026-03-10 00:30:09 | INFO | __main__ | [XGB FS] Applied selected channels. New feature dim: 12
+2026-03-10 00:30:09 | INFO | __main__ | Feature dim: 12 | Train: 2500 | Test clean: 300 | Test noisy 5dB: 300 | Test noisy 10dB: 300
+2026-03-10 00:30:09 | INFO | __main__ | Train frames: min=10, max=224, mean=39.2
+2026-03-10 00:30:09 | INFO | __main__ | Test clean frames: min=10, max=110, mean=38.6
+2026-03-10 00:30:09 | INFO | __main__ | Noisy 5dB frames: min=10, max=110, mean=38.6
+2026-03-10 00:30:09 | INFO | __main__ | Noisy 10dB frames: min=10, max=110, mean=38.6
+2026-03-10 00:30:09 | INFO | __main__ | Class distribution | train=[252, 250, 254, 250, 248, 249, 257, 250, 249, 241] test_clean=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30]
+2026-03-10 00:30:09 | INFO | __main__ | DataLoaders ready | train_batches=79 test_clean_batches=19
+2026-03-10 00:30:09 | INFO | __main__ | Noisy 5dB loader batches=19
+2026-03-10 00:30:09 | INFO | __main__ | Noisy 10dB loader batches=19
+2026-03-10 00:30:09 | INFO | __main__ | Using device: cuda
+2026-03-10 00:30:09 | INFO | __main__ | Model initialized | input_size=12 trainable_params=549226
+2026-03-10 00:30:09 | INFO | __main__ | Skip-train enabled. Loaded checkpoint from /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch=19)
+2026-03-10 00:30:09 | INFO | __main__ | Saving confusion matrices to ./figures with prefix 'best_ep_19'
+2026-03-10 00:30:10 | INFO | __main__ | Saved training curves to ./figures/best_ep_19_training_curves.png
+2026-03-10 00:30:12 | INFO | __main__ | Best clean accuracy: 0.7900 (epoch 19)
+2026-03-10 00:30:12 | INFO | __main__ | Best 5dB accuracy: 0.4700 (epoch 19)
+2026-03-10 00:30:12 | INFO | __main__ | Best 10dB accuracy: 0.5933 (epoch 19)
+2026-03-10 00:30:12 | INFO | __main__ | Final loaded-checkpoint accuracy | clean=0.7900 5dB=0.4700 10dB=0.5933
+2026-03-10 00:30:12 | INFO | __main__ | Final evaluation metrics on all test datasets:
+2026-03-10 00:30:12 | INFO | __main__ | [test_clean] loss=0.6056 acc=0.7900 precision_macro=0.8255 recall_macro=0.7900 f1_macro=0.7952 precision_weighted=0.8255 recall_weighted=0.7900 f1_weighted=0.7952
+2026-03-10 00:30:12 | INFO | __main__ | [test_noisy_5db] loss=1.7188 acc=0.4700 precision_macro=0.5204 recall_macro=0.4700 f1_macro=0.4237 precision_weighted=0.5204 recall_weighted=0.4700 f1_weighted=0.4237
+2026-03-10 00:30:12 | INFO | __main__ | [test_noisy_10db] loss=1.2749 acc=0.5933 precision_macro=0.6074 recall_macro=0.5933 f1_macro=0.5710 precision_weighted=0.6074 recall_weighted=0.5933 f1_weighted=0.5710
+2026-03-10 00:30:12 | INFO | __main__ | Run completed in 0.91 minutes
+2026-03-10 00:30:50 | INFO | __main__ | Starting run_local.py
+2026-03-10 00:30:50 | INFO | __main__ | Args | dataset_zip=/mnt/e/largescaleml/dsp_final_project/M214_project_data.zip extract_dir=/mnt/e/largescaleml/dsp_final_project/M214_project_data seed=0 batch_size=32 num_epochs=40 lr=0.0003 device=cuda feature_level=lld use_xgb_feature_selection=True xgb_val_ratio=0.200 combine_mfcc=False skip_train=False checkpoint_path=/mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt save_cm_dir=./figures
+2026-03-10 00:30:50 | INFO | __main__ | Random seed set to 0
+2026-03-10 00:30:50 | INFO | __main__ | Dataset already extracted at /mnt/e/largescaleml/dsp_final_project/M214_project_data
+2026-03-10 00:31:21 | INFO | __main__ | Train: 2500 files loaded (eGeMAPS)
+2026-03-10 00:31:24 | INFO | __main__ | Test clean: 300 files loaded (eGeMAPS)
+2026-03-10 00:31:28 | INFO | __main__ | Test noisy 5dB: 300 files loaded (eGeMAPS)
+2026-03-10 00:31:31 | INFO | __main__ | Test noisy 10dB: 300 files loaded (eGeMAPS)
+2026-03-10 00:31:31 | INFO | __main__ | Loaded datasets | train=2500 test_clean=300 test_5db=300 test_10db=300
+2026-03-10 00:31:31 | INFO | __main__ | [XGB FS] Starting feature selection with n_samples=2500, feat_dim=25, val_ratio=0.200
+2026-03-10 00:31:31 | INFO | __main__ | [XGB FS] Split sizes: train=2000, val=500 | summary dims: train=(2000, 100), val=(500, 100)
+2026-03-10 00:31:35 | INFO | __main__ | [XGB FS] k=  8  clean=0.9320  5dB=0.6520  10dB=0.8340  avg=0.8060
+2026-03-10 00:31:36 | INFO | __main__ | [XGB FS] k= 12  clean=0.9580  5dB=0.6820  10dB=0.8520  avg=0.8307
+2026-03-10 00:31:37 | INFO | __main__ | [XGB FS] k= 16  clean=0.9560  5dB=0.6760  10dB=0.8400  avg=0.8240
+2026-03-10 00:31:39 | INFO | __main__ | [XGB FS] k= 20  clean=0.9580  5dB=0.6140  10dB=0.7920  avg=0.7880
+2026-03-10 00:31:40 | INFO | __main__ | [XGB FS] k= 24  clean=0.9580  5dB=0.6360  10dB=0.8160  avg=0.8033
+2026-03-10 00:31:42 | INFO | __main__ | [XGB FS] k= 25  clean=0.9580  5dB=0.6100  10dB=0.8100  avg=0.7927
+2026-03-10 00:31:42 | INFO | __main__ | [XGB FS] Selected 12/25 channels (val clean=0.9580, 5dB=0.6820, 10dB=0.8520, avg=0.8307)
+2026-03-10 00:31:42 | INFO | __main__ | [XGB FS] Applied selected channels. New feature dim: 12
+2026-03-10 00:31:42 | INFO | __main__ | Feature dim: 12 | Train: 2500 | Test clean: 300 | Test noisy 5dB: 300 | Test noisy 10dB: 300
+2026-03-10 00:31:42 | INFO | __main__ | Train frames: min=10, max=224, mean=39.2
+2026-03-10 00:31:42 | INFO | __main__ | Test clean frames: min=10, max=110, mean=38.6
+2026-03-10 00:31:42 | INFO | __main__ | Noisy 5dB frames: min=10, max=110, mean=38.6
+2026-03-10 00:31:42 | INFO | __main__ | Noisy 10dB frames: min=10, max=110, mean=38.6
+2026-03-10 00:31:42 | INFO | __main__ | Class distribution | train=[252, 250, 254, 250, 248, 249, 257, 250, 249, 241] test_clean=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30]
+2026-03-10 00:31:42 | INFO | __main__ | DataLoaders ready | train_batches=79 test_clean_batches=19
+2026-03-10 00:31:42 | INFO | __main__ | Noisy 5dB loader batches=19
+2026-03-10 00:31:42 | INFO | __main__ | Noisy 10dB loader batches=19
+2026-03-10 00:31:42 | INFO | __main__ | Using device: cuda
+2026-03-10 00:31:42 | INFO | __main__ | Model initialized | input_size=12 trainable_params=549226
+2026-03-10 00:31:45 | INFO | __main__ | Epoch 01/40 | train_loss=2.2731 | val_loss(clean)=2.1935 | train_acc=0.1584 | val_acc(clean)=0.2533 | 5dB=0.1167 | 10dB=0.1733 | time=2.45s
+2026-03-10 00:31:45 | INFO | __main__ | New best clean accuracy: 0.2533 at epoch 1
+2026-03-10 00:31:45 | INFO | __main__ | New best 5dB accuracy: 0.1167 at epoch 1
+2026-03-10 00:31:45 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 1)
+2026-03-10 00:31:47 | INFO | __main__ | Epoch 02/40 | train_loss=2.1493 | val_loss(clean)=2.0615 | train_acc=0.2116 | val_acc(clean)=0.2633 | 5dB=0.1300 | 10dB=0.1767 | time=1.68s
+2026-03-10 00:31:47 | INFO | __main__ | New best clean accuracy: 0.2633 at epoch 2
+2026-03-10 00:31:47 | INFO | __main__ | New best 5dB accuracy: 0.1300 at epoch 2
+2026-03-10 00:31:47 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 2)
+2026-03-10 00:31:49 | INFO | __main__ | Epoch 03/40 | train_loss=2.0032 | val_loss(clean)=1.8867 | train_acc=0.2740 | val_acc(clean)=0.3533 | 5dB=0.1567 | 10dB=0.2300 | time=1.70s
+2026-03-10 00:31:49 | INFO | __main__ | New best clean accuracy: 0.3533 at epoch 3
+2026-03-10 00:31:49 | INFO | __main__ | New best 5dB accuracy: 0.1567 at epoch 3
+2026-03-10 00:31:49 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 3)
+2026-03-10 00:31:51 | INFO | __main__ | Epoch 04/40 | train_loss=1.8435 | val_loss(clean)=1.7912 | train_acc=0.3380 | val_acc(clean)=0.4200 | 5dB=0.2200 | 10dB=0.2733 | time=1.73s
+2026-03-10 00:31:51 | INFO | __main__ | New best clean accuracy: 0.4200 at epoch 4
+2026-03-10 00:31:51 | INFO | __main__ | New best 5dB accuracy: 0.2200 at epoch 4
+2026-03-10 00:31:51 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 4)
+2026-03-10 00:31:52 | INFO | __main__ | Epoch 05/40 | train_loss=1.7003 | val_loss(clean)=1.6611 | train_acc=0.4056 | val_acc(clean)=0.4133 | 5dB=0.1733 | 10dB=0.2500 | time=1.68s
+2026-03-10 00:31:54 | INFO | __main__ | Epoch 06/40 | train_loss=1.5904 | val_loss(clean)=1.4760 | train_acc=0.4536 | val_acc(clean)=0.4967 | 5dB=0.1667 | 10dB=0.2900 | time=1.67s
+2026-03-10 00:31:54 | INFO | __main__ | New best clean accuracy: 0.4967 at epoch 6
+2026-03-10 00:31:54 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 6)
+2026-03-10 00:31:56 | INFO | __main__ | Epoch 07/40 | train_loss=1.4454 | val_loss(clean)=1.3718 | train_acc=0.5024 | val_acc(clean)=0.5200 | 5dB=0.2767 | 10dB=0.3433 | time=1.63s
+2026-03-10 00:31:56 | INFO | __main__ | New best clean accuracy: 0.5200 at epoch 7
+2026-03-10 00:31:56 | INFO | __main__ | New best 5dB accuracy: 0.2767 at epoch 7
+2026-03-10 00:31:56 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 7)
+2026-03-10 00:31:57 | INFO | __main__ | Epoch 08/40 | train_loss=1.3224 | val_loss(clean)=1.1878 | train_acc=0.5424 | val_acc(clean)=0.6333 | 5dB=0.2400 | 10dB=0.3833 | time=1.61s
+2026-03-10 00:31:57 | INFO | __main__ | New best clean accuracy: 0.6333 at epoch 8
+2026-03-10 00:31:57 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 8)
+2026-03-10 00:31:59 | INFO | __main__ | Epoch 09/40 | train_loss=1.2352 | val_loss(clean)=1.1164 | train_acc=0.5828 | val_acc(clean)=0.6900 | 5dB=0.2167 | 10dB=0.3500 | time=1.67s
+2026-03-10 00:31:59 | INFO | __main__ | New best clean accuracy: 0.6900 at epoch 9
+2026-03-10 00:32:01 | INFO | __main__ | Epoch 10/40 | train_loss=1.1337 | val_loss(clean)=1.0506 | train_acc=0.6192 | val_acc(clean)=0.6733 | 5dB=0.3033 | 10dB=0.4033 | time=1.76s
+2026-03-10 00:32:01 | INFO | __main__ | New best 5dB accuracy: 0.3033 at epoch 10
+2026-03-10 00:32:01 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 10)
+2026-03-10 00:32:01 | INFO | __main__ | Epoch 11/40 | train_loss=1.0550 | val_loss(clean)=0.9427 | train_acc=0.6476 | val_acc(clean)=0.7267 | 5dB=0.2600 | 10dB=0.3767 | time=0.51s
+2026-03-10 00:32:01 | INFO | __main__ | New best clean accuracy: 0.7267 at epoch 11
+2026-03-10 00:32:03 | INFO | __main__ | Epoch 12/40 | train_loss=0.9926 | val_loss(clean)=0.9472 | train_acc=0.6660 | val_acc(clean)=0.7067 | 5dB=0.4200 | 10dB=0.4567 | time=1.58s
+2026-03-10 00:32:03 | INFO | __main__ | New best 5dB accuracy: 0.4200 at epoch 12
+2026-03-10 00:32:03 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 12)
+2026-03-10 00:32:04 | INFO | __main__ | Epoch 13/40 | train_loss=0.9266 | val_loss(clean)=0.8096 | train_acc=0.6896 | val_acc(clean)=0.7500 | 5dB=0.3600 | 10dB=0.5067 | time=1.59s
+2026-03-10 00:32:04 | INFO | __main__ | New best clean accuracy: 0.7500 at epoch 13
+2026-03-10 00:32:04 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 13)
+2026-03-10 00:32:06 | INFO | __main__ | Epoch 14/40 | train_loss=0.8522 | val_loss(clean)=0.7229 | train_acc=0.7136 | val_acc(clean)=0.8033 | 5dB=0.3433 | 10dB=0.5067 | time=1.61s
+2026-03-10 00:32:06 | INFO | __main__ | New best clean accuracy: 0.8033 at epoch 14
+2026-03-10 00:32:08 | INFO | __main__ | Epoch 15/40 | train_loss=0.7894 | val_loss(clean)=0.8097 | train_acc=0.7388 | val_acc(clean)=0.7333 | 5dB=0.4300 | 10dB=0.5233 | time=1.60s
+2026-03-10 00:32:08 | INFO | __main__ | New best 5dB accuracy: 0.4300 at epoch 15
+2026-03-10 00:32:08 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 15)
+2026-03-10 00:32:09 | INFO | __main__ | Epoch 16/40 | train_loss=0.7703 | val_loss(clean)=0.7236 | train_acc=0.7456 | val_acc(clean)=0.7800 | 5dB=0.3800 | 10dB=0.5067 | time=1.59s
+2026-03-10 00:32:11 | INFO | __main__ | Epoch 17/40 | train_loss=0.7270 | val_loss(clean)=0.6320 | train_acc=0.7676 | val_acc(clean)=0.8067 | 5dB=0.3467 | 10dB=0.4867 | time=1.60s
+2026-03-10 00:32:11 | INFO | __main__ | New best clean accuracy: 0.8067 at epoch 17
+2026-03-10 00:32:12 | INFO | __main__ | Epoch 18/40 | train_loss=0.6805 | val_loss(clean)=0.5814 | train_acc=0.7756 | val_acc(clean)=0.8200 | 5dB=0.3567 | 10dB=0.5633 | time=1.65s
+2026-03-10 00:32:12 | INFO | __main__ | New best clean accuracy: 0.8200 at epoch 18
+2026-03-10 00:32:12 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 18)
+2026-03-10 00:32:14 | INFO | __main__ | Epoch 19/40 | train_loss=0.6424 | val_loss(clean)=0.6056 | train_acc=0.7940 | val_acc(clean)=0.7900 | 5dB=0.4700 | 10dB=0.5933 | time=1.75s
+2026-03-10 00:32:14 | INFO | __main__ | New best 5dB accuracy: 0.4700 at epoch 19
+2026-03-10 00:32:14 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt (epoch 19)
+2026-03-10 00:32:16 | INFO | __main__ | Epoch 20/40 | train_loss=0.6146 | val_loss(clean)=0.5158 | train_acc=0.8108 | val_acc(clean)=0.8500 | 5dB=0.3967 | 10dB=0.5267 | time=1.71s
+2026-03-10 00:32:16 | INFO | __main__ | New best clean accuracy: 0.8500 at epoch 20
+2026-03-10 00:32:17 | INFO | __main__ | Epoch 21/40 | train_loss=0.5900 | val_loss(clean)=0.5499 | train_acc=0.8128 | val_acc(clean)=0.8300 | 5dB=0.2833 | 10dB=0.4800 | time=1.60s
+2026-03-10 00:32:19 | INFO | __main__ | Epoch 22/40 | train_loss=0.5359 | val_loss(clean)=0.5003 | train_acc=0.8376 | val_acc(clean)=0.8300 | 5dB=0.3767 | 10dB=0.5667 | time=1.70s
+2026-03-10 00:32:21 | INFO | __main__ | Epoch 23/40 | train_loss=0.5214 | val_loss(clean)=0.4620 | train_acc=0.8388 | val_acc(clean)=0.8800 | 5dB=0.2467 | 10dB=0.4233 | time=1.66s
+2026-03-10 00:32:21 | INFO | __main__ | New best clean accuracy: 0.8800 at epoch 23
+2026-03-10 00:32:23 | INFO | __main__ | Epoch 24/40 | train_loss=0.5012 | val_loss(clean)=0.5777 | train_acc=0.8412 | val_acc(clean)=0.8467 | 5dB=0.3267 | 10dB=0.4567 | time=1.71s
+2026-03-10 00:32:24 | INFO | __main__ | Epoch 25/40 | train_loss=0.4847 | val_loss(clean)=0.4150 | train_acc=0.8460 | val_acc(clean)=0.8667 | 5dB=0.4233 | 10dB=0.5533 | time=1.72s
+2026-03-10 00:32:26 | INFO | __main__ | Epoch 26/40 | train_loss=0.4573 | val_loss(clean)=0.3798 | train_acc=0.8576 | val_acc(clean)=0.8833 | 5dB=0.3967 | 10dB=0.4933 | time=1.68s
+2026-03-10 00:32:26 | INFO | __main__ | New best clean accuracy: 0.8833 at epoch 26
+2026-03-10 00:32:28 | INFO | __main__ | Epoch 27/40 | train_loss=0.4263 | val_loss(clean)=0.4666 | train_acc=0.8700 | val_acc(clean)=0.8900 | 5dB=0.3533 | 10dB=0.5367 | time=1.81s
+2026-03-10 00:32:28 | INFO | __main__ | New best clean accuracy: 0.8900 at epoch 27
+2026-03-10 00:32:29 | INFO | __main__ | Epoch 28/40 | train_loss=0.4373 | val_loss(clean)=0.4031 | train_acc=0.8652 | val_acc(clean)=0.8733 | 5dB=0.3633 | 10dB=0.5100 | time=1.71s
+2026-03-10 00:32:31 | INFO | __main__ | Epoch 29/40 | train_loss=0.4260 | val_loss(clean)=0.4193 | train_acc=0.8664 | val_acc(clean)=0.8733 | 5dB=0.2933 | 10dB=0.4767 | time=1.62s
+2026-03-10 00:32:33 | INFO | __main__ | Epoch 30/40 | train_loss=0.3849 | val_loss(clean)=0.3304 | train_acc=0.8800 | val_acc(clean)=0.8867 | 5dB=0.4033 | 10dB=0.5600 | time=1.67s
+2026-03-10 00:32:33 | INFO | __main__ | Epoch 31/40 | train_loss=0.3604 | val_loss(clean)=0.2605 | train_acc=0.8856 | val_acc(clean)=0.9167 | 5dB=0.3700 | 10dB=0.5200 | time=0.47s
+2026-03-10 00:32:33 | INFO | __main__ | New best clean accuracy: 0.9167 at epoch 31
+2026-03-10 00:32:35 | INFO | __main__ | Epoch 32/40 | train_loss=0.3536 | val_loss(clean)=0.3458 | train_acc=0.8956 | val_acc(clean)=0.8667 | 5dB=0.3933 | 10dB=0.5333 | time=1.69s
+2026-03-10 00:32:37 | INFO | __main__ | Epoch 33/40 | train_loss=0.3137 | val_loss(clean)=0.3064 | train_acc=0.8988 | val_acc(clean)=0.8933 | 5dB=0.3567 | 10dB=0.5567 | time=1.70s
+2026-03-10 00:32:38 | INFO | __main__ | Epoch 34/40 | train_loss=0.3499 | val_loss(clean)=0.2996 | train_acc=0.8956 | val_acc(clean)=0.9000 | 5dB=0.3767 | 10dB=0.5167 | time=1.62s
+2026-03-10 00:32:40 | INFO | __main__ | Epoch 35/40 | train_loss=0.3003 | val_loss(clean)=0.2777 | train_acc=0.9080 | val_acc(clean)=0.9233 | 5dB=0.3967 | 10dB=0.5300 | time=1.70s
+2026-03-10 00:32:40 | INFO | __main__ | New best clean accuracy: 0.9233 at epoch 35
+2026-03-10 00:32:42 | INFO | __main__ | Epoch 36/40 | train_loss=0.3331 | val_loss(clean)=0.3357 | train_acc=0.8892 | val_acc(clean)=0.8933 | 5dB=0.4033 | 10dB=0.5733 | time=1.70s
+2026-03-10 00:32:43 | INFO | __main__ | Epoch 37/40 | train_loss=0.3115 | val_loss(clean)=0.2447 | train_acc=0.9032 | val_acc(clean)=0.9133 | 5dB=0.4133 | 10dB=0.5567 | time=1.61s
+2026-03-10 00:32:45 | INFO | __main__ | Epoch 38/40 | train_loss=0.2930 | val_loss(clean)=0.2891 | train_acc=0.9060 | val_acc(clean)=0.9000 | 5dB=0.3400 | 10dB=0.5267 | time=1.61s
+2026-03-10 00:32:47 | INFO | __main__ | Epoch 39/40 | train_loss=0.2790 | val_loss(clean)=0.2887 | train_acc=0.9116 | val_acc(clean)=0.9100 | 5dB=0.4300 | 10dB=0.5767 | time=1.61s
+2026-03-10 00:32:48 | INFO | __main__ | Epoch 40/40 | train_loss=0.2780 | val_loss(clean)=0.3034 | train_acc=0.9156 | val_acc(clean)=0.9100 | 5dB=0.3200 | 10dB=0.5467 | time=1.60s
+2026-03-10 00:32:48 | INFO | __main__ | Loaded best checkpoint from /mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_only_best_checkpoint.pt
+2026-03-10 00:32:48 | INFO | __main__ | Saving confusion matrices to ./figures with prefix 'best_ep_19'
+2026-03-10 00:32:49 | INFO | __main__ | Saved training curves to ./figures/best_ep_19_training_curves.png
+2026-03-10 00:32:50 | INFO | __main__ | Best clean accuracy: 0.9233 (epoch 35)
+2026-03-10 00:32:50 | INFO | __main__ | Best 5dB accuracy: 0.4700 (epoch 19)
+2026-03-10 00:32:50 | INFO | __main__ | Best 10dB accuracy: 0.5933 (epoch 19)
+2026-03-10 00:32:50 | INFO | __main__ | Final loaded-checkpoint accuracy | clean=0.7900 5dB=0.4700 10dB=0.5933
+2026-03-10 00:32:50 | INFO | __main__ | Final evaluation metrics on all test datasets:
+2026-03-10 00:32:50 | INFO | __main__ | [test_clean] loss=0.6056 acc=0.7900 precision_macro=0.8255 recall_macro=0.7900 f1_macro=0.7952 precision_weighted=0.8255 recall_weighted=0.7900 f1_weighted=0.7952
+2026-03-10 00:32:50 | INFO | __main__ | [test_noisy_5db] loss=1.7188 acc=0.4700 precision_macro=0.5204 recall_macro=0.4700 f1_macro=0.4237 precision_weighted=0.5204 recall_weighted=0.4700 f1_weighted=0.4237
+2026-03-10 00:32:50 | INFO | __main__ | [test_noisy_10db] loss=1.2749 acc=0.5933 precision_macro=0.6074 recall_macro=0.5933 f1_macro=0.5710 precision_weighted=0.6074 recall_weighted=0.5933 f1_weighted=0.5710
+2026-03-10 00:32:50 | INFO | __main__ | Run completed in 2.00 minutes
