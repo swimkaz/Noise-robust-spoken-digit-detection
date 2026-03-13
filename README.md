@@ -133,7 +133,7 @@ To change the augmentation strength:
 ```bash
 AUG_PROB=0.5 AUG_SNR_MIN=5 AUG_SNR_MAX=12 bash run_pncc_delta_cmvn_aug_lstm.sh
 ```
-
+Note that it takes around 15 minutes to finish training when including data augmentation on Nvidia 4090 GPU.
 To run on CPU:
 
 ```bash
