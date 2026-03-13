@@ -1,0 +1,159 @@
+2026-03-13 13:25:21 | INFO | __main__ | Starting run_local.py
+2026-03-13 13:25:21 | INFO | __main__ | Args | dataset_zip=/mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/M214_project_data.zip extract_dir=/mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/M214_project_data seed=0 batch_size=32 num_epochs=40 lr=0.0003 device=cuda feature_source=pncc_delta_cmvn feature_level=lld opensmile_feature_set=eGeMAPSv02 use_xgb_feature_selection=False xgb_val_ratio=0.200 augment_train_noise=True train_aug_prob=0.600 train_aug_snr_min=3.00 train_aug_snr_max=15.00 combine_mfcc=False skip_train=False checkpoint_path=/mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt save_cm_dir=./figures save_feature_summary=True feature_summary_max_features=30
+2026-03-13 13:25:21 | INFO | __main__ | Random seed set to 0
+2026-03-13 13:25:21 | INFO | __main__ | Dataset already extracted at /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/M214_project_data
+2026-03-13 13:25:21 | INFO | __main__ | Using PNCC+delta+delta-delta with CMVN features.
+2026-03-13 13:25:41 | INFO | __main__ | Train: 2500 files loaded (PNCC+CMVN+delta+delta-delta)
+2026-03-13 13:25:43 | INFO | __main__ | Test clean: 300 files loaded (PNCC+CMVN+delta+delta-delta)
+2026-03-13 13:25:45 | INFO | __main__ | Test noisy 5dB: 300 files loaded (PNCC+CMVN+delta+delta-delta)
+2026-03-13 13:25:47 | INFO | __main__ | Test noisy 10dB: 300 files loaded (PNCC+CMVN+delta+delta-delta)
+2026-03-13 13:25:47 | INFO | __main__ | Loaded datasets | train=2500 test_clean=300 test_5db=300 test_10db=300
+2026-03-13 13:25:47 | INFO | __main__ | Selected feature count: 39
+2026-03-13 13:25:47 | INFO | __main__ | Selected features (first 40): ['pncc_1', 'pncc_2', 'pncc_3', 'pncc_4', 'pncc_5', 'pncc_6', 'pncc_7', 'pncc_8', 'pncc_9', 'pncc_10', 'pncc_11', 'pncc_12', 'pncc_13', 'pncc_delta_1', 'pncc_delta_2', 'pncc_delta_3', 'pncc_delta_4', 'pncc_delta_5', 'pncc_delta_6', 'pncc_delta_7', 'pncc_delta_8', 'pncc_delta_9', 'pncc_delta_10', 'pncc_delta_11', 'pncc_delta_12', 'pncc_delta_13', 'pncc_delta2_1', 'pncc_delta2_2', 'pncc_delta2_3', 'pncc_delta2_4', 'pncc_delta2_5', 'pncc_delta2_6', 'pncc_delta2_7', 'pncc_delta2_8', 'pncc_delta2_9', 'pncc_delta2_10', 'pncc_delta2_11', 'pncc_delta2_12', 'pncc_delta2_13']
+2026-03-13 13:25:47 | INFO | __main__ | Saved selected feature list to ./features/pncc_delta_cmvn_aug_best_checkpoint_selected_features.csv
+2026-03-13 13:25:47 | INFO | __main__ | Saved test_clean per-digit feature summary to ./features/pncc_delta_cmvn_aug_best_checkpoint_clean_per_digit_feature_summary.csv (digits=10, features=30)
+2026-03-13 13:25:47 | INFO | __main__ | Saved test_noisy_5db per-digit feature summary to ./features/pncc_delta_cmvn_aug_best_checkpoint_noisy5db_per_digit_feature_summary.csv (digits=10, features=30)
+2026-03-13 13:25:47 | INFO | __main__ | Saved test_noisy_10db per-digit feature summary to ./features/pncc_delta_cmvn_aug_best_checkpoint_noisy10db_per_digit_feature_summary.csv (digits=10, features=30)
+2026-03-13 13:25:47 | INFO | __main__ | Feature dim: 39 | Train: 2500 | Test clean: 300 | Test noisy 5dB: 300 | Test noisy 10dB: 300
+2026-03-13 13:25:47 | INFO | __main__ | Train frames: min=12, max=226, mean=41.7
+2026-03-13 13:25:47 | INFO | __main__ | Test clean frames: min=12, max=113, mean=41.1
+2026-03-13 13:25:47 | INFO | __main__ | Noisy 5dB frames: min=12, max=113, mean=41.1
+2026-03-13 13:25:47 | INFO | __main__ | Noisy 10dB frames: min=12, max=113, mean=41.1
+2026-03-13 13:25:47 | INFO | __main__ | Class distribution | train=[252, 250, 254, 250, 248, 249, 257, 250, 249, 241] test_clean=[30, 30, 30, 30, 30, 30, 30, 30, 30, 30]
+2026-03-13 13:25:47 | INFO | __main__ | DataLoaders ready | train_batches=79 test_clean_batches=19 train_dataset_mode=audio_onthefly
+2026-03-13 13:25:47 | INFO | __main__ | Noisy 5dB loader batches=19
+2026-03-13 13:25:47 | INFO | __main__ | Noisy 10dB loader batches=19
+2026-03-13 13:25:47 | INFO | __main__ | Using device: cuda
+2026-03-13 13:25:48 | INFO | __main__ | Model initialized | input_size=39 trainable_params=576874
+2026-03-13 13:26:12 | INFO | __main__ | Epoch 01/40 | train_loss=2.2689 | val_loss(clean)=2.0363 | val_loss(5dB)=2.0827 | val_loss(10dB)=2.0466 | train_acc=0.1272 | val_acc(clean)=0.3200 | val_acc(5dB)=0.3233 | val_acc(10dB)=0.3333 | time=23.32s
+2026-03-13 13:26:12 | INFO | __main__ | New best clean accuracy: 0.3200 at epoch 1
+2026-03-13 13:26:12 | INFO | __main__ | New best 5dB accuracy: 0.3233 at epoch 1
+2026-03-13 13:26:12 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 1)
+2026-03-13 13:26:35 | INFO | __main__ | Epoch 02/40 | train_loss=1.7976 | val_loss(clean)=1.2994 | val_loss(5dB)=1.5092 | val_loss(10dB)=1.4093 | train_acc=0.3284 | val_acc(clean)=0.6533 | val_acc(5dB)=0.4700 | val_acc(10dB)=0.5733 | time=22.82s
+2026-03-13 13:26:35 | INFO | __main__ | New best clean accuracy: 0.6533 at epoch 2
+2026-03-13 13:26:35 | INFO | __main__ | New best 5dB accuracy: 0.4700 at epoch 2
+2026-03-13 13:26:35 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 2)
+2026-03-13 13:26:58 | INFO | __main__ | Epoch 03/40 | train_loss=1.2375 | val_loss(clean)=0.9132 | val_loss(5dB)=1.2151 | val_loss(10dB)=1.0835 | train_acc=0.5840 | val_acc(clean)=0.7100 | val_acc(5dB)=0.5600 | val_acc(10dB)=0.6100 | time=23.01s
+2026-03-13 13:26:58 | INFO | __main__ | New best clean accuracy: 0.7100 at epoch 3
+2026-03-13 13:26:58 | INFO | __main__ | New best 5dB accuracy: 0.5600 at epoch 3
+2026-03-13 13:26:58 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 3)
+2026-03-13 13:27:21 | INFO | __main__ | Epoch 04/40 | train_loss=1.0001 | val_loss(clean)=0.6374 | val_loss(5dB)=1.0642 | val_loss(10dB)=0.8537 | train_acc=0.6452 | val_acc(clean)=0.8267 | val_acc(5dB)=0.6167 | val_acc(10dB)=0.7033 | time=23.11s
+2026-03-13 13:27:21 | INFO | __main__ | New best clean accuracy: 0.8267 at epoch 4
+2026-03-13 13:27:21 | INFO | __main__ | New best 5dB accuracy: 0.6167 at epoch 4
+2026-03-13 13:27:21 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 4)
+2026-03-13 13:27:44 | INFO | __main__ | Epoch 05/40 | train_loss=0.8174 | val_loss(clean)=0.5105 | val_loss(5dB)=1.0090 | val_loss(10dB)=0.8132 | train_acc=0.7324 | val_acc(clean)=0.8633 | val_acc(5dB)=0.6367 | val_acc(10dB)=0.7267 | time=22.81s
+2026-03-13 13:27:44 | INFO | __main__ | New best clean accuracy: 0.8633 at epoch 5
+2026-03-13 13:27:44 | INFO | __main__ | New best 5dB accuracy: 0.6367 at epoch 5
+2026-03-13 13:27:44 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 5)
+2026-03-13 13:28:07 | INFO | __main__ | Epoch 06/40 | train_loss=0.7116 | val_loss(clean)=0.3934 | val_loss(5dB)=0.9087 | val_loss(10dB)=0.6612 | train_acc=0.7672 | val_acc(clean)=0.8900 | val_acc(5dB)=0.6567 | val_acc(10dB)=0.7833 | time=23.18s
+2026-03-13 13:28:07 | INFO | __main__ | New best clean accuracy: 0.8900 at epoch 6
+2026-03-13 13:28:07 | INFO | __main__ | New best 5dB accuracy: 0.6567 at epoch 6
+2026-03-13 13:28:07 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 6)
+2026-03-13 13:28:30 | INFO | __main__ | Epoch 07/40 | train_loss=0.6298 | val_loss(clean)=0.3442 | val_loss(5dB)=0.8756 | val_loss(10dB)=0.5830 | train_acc=0.8052 | val_acc(clean)=0.9333 | val_acc(5dB)=0.6833 | val_acc(10dB)=0.7833 | time=23.13s
+2026-03-13 13:28:30 | INFO | __main__ | New best clean accuracy: 0.9333 at epoch 7
+2026-03-13 13:28:30 | INFO | __main__ | New best 5dB accuracy: 0.6833 at epoch 7
+2026-03-13 13:28:53 | INFO | __main__ | Epoch 08/40 | train_loss=0.5468 | val_loss(clean)=0.2926 | val_loss(5dB)=0.9073 | val_loss(10dB)=0.5601 | train_acc=0.8380 | val_acc(clean)=0.9167 | val_acc(5dB)=0.7033 | val_acc(10dB)=0.8067 | time=23.22s
+2026-03-13 13:28:53 | INFO | __main__ | New best 5dB accuracy: 0.7033 at epoch 8
+2026-03-13 13:28:53 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 8)
+2026-03-13 13:29:17 | INFO | __main__ | Epoch 09/40 | train_loss=0.4615 | val_loss(clean)=0.3448 | val_loss(5dB)=1.0178 | val_loss(10dB)=0.6455 | train_acc=0.8660 | val_acc(clean)=0.8833 | val_acc(5dB)=0.7033 | val_acc(10dB)=0.7867 | time=23.17s
+2026-03-13 13:29:40 | INFO | __main__ | Epoch 10/40 | train_loss=0.4294 | val_loss(clean)=0.2413 | val_loss(5dB)=1.0022 | val_loss(10dB)=0.5667 | train_acc=0.8836 | val_acc(clean)=0.9367 | val_acc(5dB)=0.6733 | val_acc(10dB)=0.8267 | time=23.06s
+2026-03-13 13:29:40 | INFO | __main__ | New best clean accuracy: 0.9367 at epoch 10
+2026-03-13 13:29:40 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 10)
+2026-03-13 13:30:03 | INFO | __main__ | Epoch 11/40 | train_loss=0.3866 | val_loss(clean)=0.2259 | val_loss(5dB)=0.9329 | val_loss(10dB)=0.5391 | train_acc=0.8960 | val_acc(clean)=0.9400 | val_acc(5dB)=0.6933 | val_acc(10dB)=0.8300 | time=23.19s
+2026-03-13 13:30:03 | INFO | __main__ | New best clean accuracy: 0.9400 at epoch 11
+2026-03-13 13:30:03 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 11)
+2026-03-13 13:30:26 | INFO | __main__ | Epoch 12/40 | train_loss=0.3703 | val_loss(clean)=0.2135 | val_loss(5dB)=0.8533 | val_loss(10dB)=0.4263 | train_acc=0.9036 | val_acc(clean)=0.9467 | val_acc(5dB)=0.7767 | val_acc(10dB)=0.8633 | time=22.99s
+2026-03-13 13:30:26 | INFO | __main__ | New best clean accuracy: 0.9467 at epoch 12
+2026-03-13 13:30:26 | INFO | __main__ | New best 5dB accuracy: 0.7767 at epoch 12
+2026-03-13 13:30:26 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 12)
+2026-03-13 13:30:49 | INFO | __main__ | Epoch 13/40 | train_loss=0.3169 | val_loss(clean)=0.1768 | val_loss(5dB)=0.8867 | val_loss(10dB)=0.4766 | train_acc=0.9180 | val_acc(clean)=0.9600 | val_acc(5dB)=0.7433 | val_acc(10dB)=0.8467 | time=23.58s
+2026-03-13 13:30:49 | INFO | __main__ | New best clean accuracy: 0.9600 at epoch 13
+2026-03-13 13:31:13 | INFO | __main__ | Epoch 14/40 | train_loss=0.3020 | val_loss(clean)=0.1587 | val_loss(5dB)=0.9560 | val_loss(10dB)=0.4563 | train_acc=0.9172 | val_acc(clean)=0.9633 | val_acc(5dB)=0.7600 | val_acc(10dB)=0.8733 | time=23.16s
+2026-03-13 13:31:13 | INFO | __main__ | New best clean accuracy: 0.9633 at epoch 14
+2026-03-13 13:31:13 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 14)
+2026-03-13 13:31:35 | INFO | __main__ | Epoch 15/40 | train_loss=0.2722 | val_loss(clean)=0.1530 | val_loss(5dB)=1.0050 | val_loss(10dB)=0.3758 | train_acc=0.9340 | val_acc(clean)=0.9633 | val_acc(5dB)=0.7633 | val_acc(10dB)=0.8933 | time=22.95s
+2026-03-13 13:31:36 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 15)
+2026-03-13 13:31:58 | INFO | __main__ | Epoch 16/40 | train_loss=0.2649 | val_loss(clean)=0.1202 | val_loss(5dB)=0.9018 | val_loss(10dB)=0.4602 | train_acc=0.9332 | val_acc(clean)=0.9700 | val_acc(5dB)=0.7733 | val_acc(10dB)=0.8767 | time=22.99s
+2026-03-13 13:31:58 | INFO | __main__ | New best clean accuracy: 0.9700 at epoch 16
+2026-03-13 13:32:21 | INFO | __main__ | Epoch 17/40 | train_loss=0.2590 | val_loss(clean)=0.1827 | val_loss(5dB)=0.9894 | val_loss(10dB)=0.4670 | train_acc=0.9324 | val_acc(clean)=0.9533 | val_acc(5dB)=0.7500 | val_acc(10dB)=0.8567 | time=22.96s
+2026-03-13 13:32:44 | INFO | __main__ | Epoch 18/40 | train_loss=0.2354 | val_loss(clean)=0.1551 | val_loss(5dB)=0.9738 | val_loss(10dB)=0.4159 | train_acc=0.9428 | val_acc(clean)=0.9567 | val_acc(5dB)=0.7800 | val_acc(10dB)=0.8767 | time=23.02s
+2026-03-13 13:32:44 | INFO | __main__ | New best 5dB accuracy: 0.7800 at epoch 18
+2026-03-13 13:33:08 | INFO | __main__ | Epoch 19/40 | train_loss=0.2376 | val_loss(clean)=0.0979 | val_loss(5dB)=0.8278 | val_loss(10dB)=0.3553 | train_acc=0.9436 | val_acc(clean)=0.9733 | val_acc(5dB)=0.8000 | val_acc(10dB)=0.9033 | time=23.14s
+2026-03-13 13:33:08 | INFO | __main__ | New best clean accuracy: 0.9733 at epoch 19
+2026-03-13 13:33:08 | INFO | __main__ | New best 5dB accuracy: 0.8000 at epoch 19
+2026-03-13 13:33:08 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 19)
+2026-03-13 13:33:30 | INFO | __main__ | Epoch 20/40 | train_loss=0.2068 | val_loss(clean)=0.1380 | val_loss(5dB)=0.8824 | val_loss(10dB)=0.4231 | train_acc=0.9480 | val_acc(clean)=0.9667 | val_acc(5dB)=0.8067 | val_acc(10dB)=0.9067 | time=22.84s
+2026-03-13 13:33:30 | INFO | __main__ | New best 5dB accuracy: 0.8067 at epoch 20
+2026-03-13 13:33:30 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 20)
+2026-03-13 13:33:53 | INFO | __main__ | Epoch 21/40 | train_loss=0.1958 | val_loss(clean)=0.1625 | val_loss(5dB)=1.0419 | val_loss(10dB)=0.5360 | train_acc=0.9484 | val_acc(clean)=0.9600 | val_acc(5dB)=0.7767 | val_acc(10dB)=0.8767 | time=22.93s
+2026-03-13 13:34:17 | INFO | __main__ | Epoch 22/40 | train_loss=0.1850 | val_loss(clean)=0.1786 | val_loss(5dB)=1.0758 | val_loss(10dB)=0.4580 | train_acc=0.9560 | val_acc(clean)=0.9600 | val_acc(5dB)=0.7733 | val_acc(10dB)=0.8900 | time=23.20s
+2026-03-13 13:34:40 | INFO | __main__ | Epoch 23/40 | train_loss=0.1808 | val_loss(clean)=0.1062 | val_loss(5dB)=1.1826 | val_loss(10dB)=0.4628 | train_acc=0.9592 | val_acc(clean)=0.9733 | val_acc(5dB)=0.7667 | val_acc(10dB)=0.8967 | time=23.43s
+2026-03-13 13:35:03 | INFO | __main__ | Epoch 24/40 | train_loss=0.1485 | val_loss(clean)=0.1471 | val_loss(5dB)=0.9248 | val_loss(10dB)=0.3854 | train_acc=0.9624 | val_acc(clean)=0.9733 | val_acc(5dB)=0.8067 | val_acc(10dB)=0.9100 | time=22.97s
+2026-03-13 13:35:03 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 24)
+2026-03-13 13:35:26 | INFO | __main__ | Epoch 25/40 | train_loss=0.1872 | val_loss(clean)=0.0929 | val_loss(5dB)=1.0138 | val_loss(10dB)=0.3584 | train_acc=0.9580 | val_acc(clean)=0.9800 | val_acc(5dB)=0.7700 | val_acc(10dB)=0.9167 | time=23.06s
+2026-03-13 13:35:26 | INFO | __main__ | New best clean accuracy: 0.9800 at epoch 25
+2026-03-13 13:35:26 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 25)
+2026-03-13 13:35:49 | INFO | __main__ | Epoch 26/40 | train_loss=0.1624 | val_loss(clean)=0.1480 | val_loss(5dB)=1.4316 | val_loss(10dB)=0.4619 | train_acc=0.9624 | val_acc(clean)=0.9600 | val_acc(5dB)=0.7367 | val_acc(10dB)=0.9000 | time=22.98s
+2026-03-13 13:36:12 | INFO | __main__ | Epoch 27/40 | train_loss=0.1509 | val_loss(clean)=0.0839 | val_loss(5dB)=1.1702 | val_loss(10dB)=0.4920 | train_acc=0.9636 | val_acc(clean)=0.9833 | val_acc(5dB)=0.7800 | val_acc(10dB)=0.9000 | time=22.90s
+2026-03-13 13:36:12 | INFO | __main__ | New best clean accuracy: 0.9833 at epoch 27
+2026-03-13 13:36:35 | INFO | __main__ | Epoch 28/40 | train_loss=0.1528 | val_loss(clean)=0.1215 | val_loss(5dB)=1.1156 | val_loss(10dB)=0.4470 | train_acc=0.9668 | val_acc(clean)=0.9733 | val_acc(5dB)=0.7933 | val_acc(10dB)=0.9067 | time=23.00s
+2026-03-13 13:36:58 | INFO | __main__ | Epoch 29/40 | train_loss=0.1460 | val_loss(clean)=0.1175 | val_loss(5dB)=1.1538 | val_loss(10dB)=0.4642 | train_acc=0.9644 | val_acc(clean)=0.9733 | val_acc(5dB)=0.7767 | val_acc(10dB)=0.8967 | time=23.04s
+2026-03-13 13:37:22 | INFO | __main__ | Epoch 30/40 | train_loss=0.1425 | val_loss(clean)=0.1127 | val_loss(5dB)=0.8976 | val_loss(10dB)=0.2367 | train_acc=0.9636 | val_acc(clean)=0.9800 | val_acc(5dB)=0.8233 | val_acc(10dB)=0.9400 | time=23.48s
+2026-03-13 13:37:22 | INFO | __main__ | New best 5dB accuracy: 0.8233 at epoch 30
+2026-03-13 13:37:22 | INFO | __main__ | Saved best checkpoint to /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt (epoch 30)
+2026-03-13 13:37:45 | INFO | __main__ | Epoch 31/40 | train_loss=0.1265 | val_loss(clean)=0.0906 | val_loss(5dB)=1.4043 | val_loss(10dB)=0.5059 | train_acc=0.9704 | val_acc(clean)=0.9867 | val_acc(5dB)=0.7767 | val_acc(10dB)=0.9067 | time=23.02s
+2026-03-13 13:37:45 | INFO | __main__ | New best clean accuracy: 0.9867 at epoch 31
+2026-03-13 13:38:08 | INFO | __main__ | Epoch 32/40 | train_loss=0.1316 | val_loss(clean)=0.1523 | val_loss(5dB)=1.1210 | val_loss(10dB)=0.5346 | train_acc=0.9656 | val_acc(clean)=0.9600 | val_acc(5dB)=0.7800 | val_acc(10dB)=0.8700 | time=23.45s
+2026-03-13 13:38:31 | INFO | __main__ | Epoch 33/40 | train_loss=0.1137 | val_loss(clean)=0.1364 | val_loss(5dB)=1.2098 | val_loss(10dB)=0.5001 | train_acc=0.9708 | val_acc(clean)=0.9700 | val_acc(5dB)=0.7633 | val_acc(10dB)=0.9033 | time=23.36s
+2026-03-13 13:38:54 | INFO | __main__ | Epoch 34/40 | train_loss=0.1393 | val_loss(clean)=0.0885 | val_loss(5dB)=1.2803 | val_loss(10dB)=0.5242 | train_acc=0.9696 | val_acc(clean)=0.9800 | val_acc(5dB)=0.7733 | val_acc(10dB)=0.9133 | time=22.98s
+2026-03-13 13:39:17 | INFO | __main__ | Epoch 35/40 | train_loss=0.1298 | val_loss(clean)=0.1062 | val_loss(5dB)=1.2575 | val_loss(10dB)=0.4386 | train_acc=0.9732 | val_acc(clean)=0.9733 | val_acc(5dB)=0.7900 | val_acc(10dB)=0.9100 | time=23.00s
+2026-03-13 13:39:40 | INFO | __main__ | Epoch 36/40 | train_loss=0.1004 | val_loss(clean)=0.1805 | val_loss(5dB)=1.4459 | val_loss(10dB)=0.4212 | train_acc=0.9776 | val_acc(clean)=0.9700 | val_acc(5dB)=0.7867 | val_acc(10dB)=0.9233 | time=23.02s
+2026-03-13 13:40:04 | INFO | __main__ | Epoch 37/40 | train_loss=0.0909 | val_loss(clean)=0.1614 | val_loss(5dB)=1.1076 | val_loss(10dB)=0.4056 | train_acc=0.9776 | val_acc(clean)=0.9767 | val_acc(5dB)=0.8000 | val_acc(10dB)=0.9333 | time=23.15s
+2026-03-13 13:40:27 | INFO | __main__ | Epoch 38/40 | train_loss=0.0988 | val_loss(clean)=0.1572 | val_loss(5dB)=1.5154 | val_loss(10dB)=0.5513 | train_acc=0.9776 | val_acc(clean)=0.9667 | val_acc(5dB)=0.7700 | val_acc(10dB)=0.8967 | time=23.07s
+2026-03-13 13:40:50 | INFO | __main__ | Epoch 39/40 | train_loss=0.1303 | val_loss(clean)=0.1190 | val_loss(5dB)=1.3170 | val_loss(10dB)=0.5342 | train_acc=0.9716 | val_acc(clean)=0.9700 | val_acc(5dB)=0.7800 | val_acc(10dB)=0.8967 | time=23.20s
+2026-03-13 13:41:13 | INFO | __main__ | Epoch 40/40 | train_loss=0.0897 | val_loss(clean)=0.0693 | val_loss(5dB)=1.1205 | val_loss(10dB)=0.3886 | train_acc=0.9800 | val_acc(clean)=0.9833 | val_acc(5dB)=0.8133 | val_acc(10dB)=0.9300 | time=23.08s
+2026-03-13 13:41:13 | INFO | __main__ | Loaded best checkpoint from /mnt/e/largescaleml/dsp_final_project/M214A-Group4-FinalProject/checkpoints/pncc_delta_cmvn_aug_best_checkpoint.pt
+2026-03-13 13:41:13 | INFO | __main__ | Saving confusion matrices to ./figures with prefix 'pncc_delta_cmvn_aug_best_checkpoint'
+2026-03-13 13:41:13 | INFO | __main__ | Saved training curves to ./figures/pncc_delta_cmvn_aug_best_checkpoint_training_curves.png
+2026-03-13 13:41:15 | INFO | __main__ | Best clean accuracy: 0.9867 (epoch 31)
+2026-03-13 13:41:15 | INFO | __main__ | Best 5dB accuracy: 0.8233 (epoch 30)
+2026-03-13 13:41:15 | INFO | __main__ | Best 10dB accuracy: 0.9400 (epoch 30)
+2026-03-13 13:41:15 | INFO | __main__ | Final loaded-checkpoint accuracy | clean=0.9800 5dB=0.8233 10dB=0.9400
+2026-03-13 13:41:15 | INFO | __main__ | Final evaluation metrics on all test datasets:
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean] loss=0.1127 acc=0.9800 precision_macro=0.9805 recall_macro=0.9800 f1_macro=0.9799 precision_weighted=0.9805 recall_weighted=0.9800 f1_weighted=0.9799
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=0] precision=1.0000 recall=1.0000 f1=1.0000 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=1] precision=0.9677 recall=1.0000 f1=0.9836 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=2] precision=1.0000 recall=0.9667 f1=0.9831 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=3] precision=0.9667 recall=0.9667 f1=0.9667 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=4] precision=1.0000 recall=0.9333 f1=0.9655 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=5] precision=1.0000 recall=1.0000 f1=1.0000 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=6] precision=0.9655 recall=0.9333 f1=0.9492 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=7] precision=0.9375 recall=1.0000 f1=0.9677 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=8] precision=0.9677 recall=1.0000 f1=0.9836 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_clean][digit=9] precision=1.0000 recall=1.0000 f1=1.0000 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db] loss=0.8976 acc=0.8233 precision_macro=0.8214 recall_macro=0.8233 f1_macro=0.8204 precision_weighted=0.8214 recall_weighted=0.8233 f1_weighted=0.8204
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=0] precision=0.8148 recall=0.7333 f1=0.7719 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=1] precision=0.8333 recall=0.8333 f1=0.8333 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=2] precision=0.7586 recall=0.7333 f1=0.7458 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=3] precision=0.8286 recall=0.9667 f1=0.8923 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=4] precision=0.8929 recall=0.8333 f1=0.8621 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=5] precision=0.8125 recall=0.8667 f1=0.8387 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=6] precision=0.6923 recall=0.6000 f1=0.6429 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=7] precision=0.8571 recall=0.8000 f1=0.8276 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=8] precision=0.8667 recall=0.8667 f1=0.8667 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_5db][digit=9] precision=0.8571 recall=1.0000 f1=0.9231 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db] loss=0.2367 acc=0.9400 precision_macro=0.9411 recall_macro=0.9400 f1_macro=0.9398 precision_weighted=0.9411 recall_weighted=0.9400 f1_weighted=0.9398
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=0] precision=0.9310 recall=0.9000 f1=0.9153 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=1] precision=0.9667 recall=0.9667 f1=0.9667 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=2] precision=0.8667 recall=0.8667 f1=0.8667 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=3] precision=0.8824 recall=1.0000 f1=0.9375 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=4] precision=0.9655 recall=0.9333 f1=0.9492 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=5] precision=0.9355 recall=0.9667 f1=0.9508 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=6] precision=0.9630 recall=0.8667 f1=0.9123 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=7] precision=0.9677 recall=1.0000 f1=0.9836 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=8] precision=0.9655 recall=0.9333 f1=0.9492 support=30
+2026-03-13 13:41:15 | INFO | __main__ | [test_noisy_10db][digit=9] precision=0.9667 recall=0.9667 f1=0.9667 support=30
+2026-03-13 13:41:15 | INFO | __main__ | Saved test_clean per-digit metrics CSV to ./features/pncc_delta_cmvn_aug_best_checkpoint_test_clean_per_digit_metrics.csv
+2026-03-13 13:41:15 | INFO | __main__ | Saved test_noisy_5db per-digit metrics CSV to ./features/pncc_delta_cmvn_aug_best_checkpoint_test_noisy_5db_per_digit_metrics.csv
+2026-03-13 13:41:15 | INFO | __main__ | Saved test_noisy_10db per-digit metrics CSV to ./features/pncc_delta_cmvn_aug_best_checkpoint_test_noisy_10db_per_digit_metrics.csv
+2026-03-13 13:41:15 | INFO | __main__ | Run completed in 15.90 minutes
