@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd /mnt/e/largescaleml/dsp_final_project
-CHECKPOINT_PATH="${CHECKPOINT_PATH:-/mnt/e/largescaleml/dsp_final_project/checkpoints/opensmile_mfcc_best_checkpoint.pt}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${SCRIPT_DIR}"
+CHECKPOINT_PATH="${CHECKPOINT_PATH:-${SCRIPT_DIR}/checkpoints/mfcc_baseline_best_checkpoint.pt}"
 SKIP_TRAIN=false
 SAVE_CM_DIR="${SAVE_CM_DIR:-./figures}"
-LOG_FILE="${LOG_FILE:-/mnt/e/largescaleml/dsp_final_project/logs/opensmile_mfcc_lstm.log}"
+LOG_FILE="${LOG_FILE:-${SCRIPT_DIR}/logs/mfcc_baseline_lstm.log}"
 
-python opensmile_lstm.py \
-  --use-xgb-feature-selection true \
+python3 feature_dev_lstm.py \
+  --feature-source mfcc \
+  --use-xgb-feature-selection false \
   --combine-mfcc false \
   --checkpoint-path "${CHECKPOINT_PATH}" \
   --skip-train "${SKIP_TRAIN}" \
