@@ -117,7 +117,7 @@ Current reference result:
 Outputs:
 - log: `logs/pncc_delta_cmvn_aug_lstm2.log`
 - checkpoint: `checkpoints/pncc_delta_cmvn_aug_best_checkpoint2.pt`
-- detailed metrics: `features/pncc_delta_cmvn_aug_best_metrics_summary_v2.csv`
+- detailed metrics: `features/pncc_delta_cmvn_aug_best_metrics*.csv`
 
 ## Reproducing the Best Augmented Result
 
@@ -145,19 +145,6 @@ To evaluate from an existing checkpoint without retraining:
 ```bash
 SKIP_TRAIN=true bash run_pncc_delta_cmvn_aug_lstm.sh
 ```
-
-## Other Available Launchers
-
-- `run_pncc_lstm.sh`
-- `run_pncc_cmvn_lstm.sh`
-- `run_pncc_delta_only_lstm.sh`
-- `run_pncc_delta_cmvn_only_lstm.sh`
-- `run_pncc_delta_lstm.sh`
-- `run_pncc_delta2_cmvn_lstm.sh`
-- `run_mfcc_delta_cmvn_lstm.sh`
-- `run_opensmile_only_lstm.sh`
-- `run_opensmile_mfcc_lstm.sh`
-- `run_opensmile_pncc_lstm.sh`
 
 ## Notes
 
